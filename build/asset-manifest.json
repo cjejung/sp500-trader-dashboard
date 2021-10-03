@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/sp500_trader_dashboard/static/css/main.973e11aa.chunk.css",
+    "main.js": "/sp500_trader_dashboard/static/js/main.98891d37.chunk.js",
+    "main.js.map": "/sp500_trader_dashboard/static/js/main.98891d37.chunk.js.map",
+    "runtime-main.js": "/sp500_trader_dashboard/static/js/runtime-main.bbf41940.js",
+    "runtime-main.js.map": "/sp500_trader_dashboard/static/js/runtime-main.bbf41940.js.map",
+    "static/js/2.1457b89b.chunk.js": "/sp500_trader_dashboard/static/js/2.1457b89b.chunk.js",
+    "static/js/2.1457b89b.chunk.js.map": "/sp500_trader_dashboard/static/js/2.1457b89b.chunk.js.map",
+    "static/css/3.622e12f1.chunk.css": "/sp500_trader_dashboard/static/css/3.622e12f1.chunk.css",
+    "static/js/3.f1e10414.chunk.js": "/sp500_trader_dashboard/static/js/3.f1e10414.chunk.js",
+    "static/js/3.f1e10414.chunk.js.map": "/sp500_trader_dashboard/static/js/3.f1e10414.chunk.js.map",
+    "static/js/4.15442083.chunk.js": "/sp500_trader_dashboard/static/js/4.15442083.chunk.js",
+    "static/js/4.15442083.chunk.js.map": "/sp500_trader_dashboard/static/js/4.15442083.chunk.js.map",
+    "index.html": "/sp500_trader_dashboard/index.html",
+    "precache-manifest.ba1e10107661bf7580cf31d8587abe1e.js": "/sp500_trader_dashboard/precache-manifest.ba1e10107661bf7580cf31d8587abe1e.js",
+    "service-worker.js": "/sp500_trader_dashboard/service-worker.js",
+    "static/css/3.622e12f1.chunk.css.map": "/sp500_trader_dashboard/static/css/3.622e12f1.chunk.css.map",
+    "static/css/main.973e11aa.chunk.css.map": "/sp500_trader_dashboard/static/css/main.973e11aa.chunk.css.map",
+    "static/js/2.1457b89b.chunk.js.LICENSE": "/sp500_trader_dashboard/static/js/2.1457b89b.chunk.js.LICENSE",
+    "static/js/3.f1e10414.chunk.js.LICENSE": "/sp500_trader_dashboard/static/js/3.f1e10414.chunk.js.LICENSE",
+    "static/media/App.scss": "/sp500_trader_dashboard/static/media/zw.8b885465.svg",
+    "static/media/font-awesome.min.css": "/sp500_trader_dashboard/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bbf41940.js",
+    "static/css/3.622e12f1.chunk.css",
+    "static/js/3.f1e10414.chunk.js",
+    "static/css/main.973e11aa.chunk.css",
+    "static/js/main.98891d37.chunk.js"
+  ]
+}
