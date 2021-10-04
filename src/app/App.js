@@ -364,7 +364,7 @@ export class Dashboard extends Component {
           <div className="az-content-body">
             <div className="az-dashboard-one-title">
               <div>
-                <h2 className="az-dashboard-title">Portfolio Performance Tracker</h2> 
+                <h2 className="az-dashboard-title">Portfolio Performance</h2> 
               </div>
               <div className="az-content-header-right">
                 <div className="media">
