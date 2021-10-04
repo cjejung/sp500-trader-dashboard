@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/sp500-trader-dashboard/static/css/main.d4c474b6.chunk.css",
-    "main.js": "/sp500-trader-dashboard/static/js/main.5090d4a5.chunk.js",
-    "main.js.map": "/sp500-trader-dashboard/static/js/main.5090d4a5.chunk.js.map",
-    "runtime-main.js": "/sp500-trader-dashboard/static/js/runtime-main.1e6607ac.js",
-    "runtime-main.js.map": "/sp500-trader-dashboard/static/js/runtime-main.1e6607ac.js.map",
-    "static/css/2.cdc722c4.chunk.css": "/sp500-trader-dashboard/static/css/2.cdc722c4.chunk.css",
-    "static/js/2.0d63af3c.chunk.js": "/sp500-trader-dashboard/static/js/2.0d63af3c.chunk.js",
-    "static/js/2.0d63af3c.chunk.js.map": "/sp500-trader-dashboard/static/js/2.0d63af3c.chunk.js.map",
+    "main.css": "/sp500-trader-dashboard/static/css/main.36603ac8.chunk.css",
+    "main.js": "/sp500-trader-dashboard/static/js/main.17e3bfeb.chunk.js",
+    "main.js.map": "/sp500-trader-dashboard/static/js/main.17e3bfeb.chunk.js.map",
+    "runtime-main.js": "/sp500-trader-dashboard/static/js/runtime-main.646c14db.js",
+    "runtime-main.js.map": "/sp500-trader-dashboard/static/js/runtime-main.646c14db.js.map",
+    "static/css/2.58b9d2b8.chunk.css": "/sp500-trader-dashboard/static/css/2.58b9d2b8.chunk.css",
+    "static/js/2.420188e9.chunk.js": "/sp500-trader-dashboard/static/js/2.420188e9.chunk.js",
+    "static/js/2.420188e9.chunk.js.map": "/sp500-trader-dashboard/static/js/2.420188e9.chunk.js.map",
     "index.html": "/sp500-trader-dashboard/index.html",
-    "precache-manifest.f030a1f87d4713e97954d7300d2e3504.js": "/sp500-trader-dashboard/precache-manifest.f030a1f87d4713e97954d7300d2e3504.js",
+    "precache-manifest.237c70089af4fa3a8d973aca57885ba0.js": "/sp500-trader-dashboard/precache-manifest.237c70089af4fa3a8d973aca57885ba0.js",
     "service-worker.js": "/sp500-trader-dashboard/service-worker.js",
-    "static/css/2.cdc722c4.chunk.css.map": "/sp500-trader-dashboard/static/css/2.cdc722c4.chunk.css.map",
-    "static/css/main.d4c474b6.chunk.css.map": "/sp500-trader-dashboard/static/css/main.d4c474b6.chunk.css.map",
-    "static/js/2.0d63af3c.chunk.js.LICENSE": "/sp500-trader-dashboard/static/js/2.0d63af3c.chunk.js.LICENSE",
+    "static/css/2.58b9d2b8.chunk.css.map": "/sp500-trader-dashboard/static/css/2.58b9d2b8.chunk.css.map",
+    "static/css/main.36603ac8.chunk.css.map": "/sp500-trader-dashboard/static/css/main.36603ac8.chunk.css.map",
+    "static/js/2.420188e9.chunk.js.LICENSE": "/sp500-trader-dashboard/static/js/2.420188e9.chunk.js.LICENSE",
     "static/media/App.scss": "/sp500-trader-dashboard/static/media/zw.8b885465.svg",
     "static/media/font-awesome.min.css": "/sp500-trader-dashboard/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.1e6607ac.js",
-    "static/css/2.cdc722c4.chunk.css",
-    "static/js/2.0d63af3c.chunk.js",
-    "static/css/main.d4c474b6.chunk.css",
-    "static/js/main.5090d4a5.chunk.js"
+    "static/js/runtime-main.646c14db.js",
+    "static/css/2.58b9d2b8.chunk.css",
+    "static/js/2.420188e9.chunk.js",
+    "static/css/main.36603ac8.chunk.css",
+    "static/js/main.17e3bfeb.chunk.js"
   ]
 }
