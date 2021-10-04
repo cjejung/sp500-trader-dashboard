@@ -22,7 +22,8 @@ export class Dashboard extends Component {
           data: returnsData[0].dataPortfolio,
           borderWidth: 2,
           fill: false,
-          borderColor: ['rgb(0, 204, 212)']
+          borderColor: ['rgb(0, 204, 212)'],
+          pointHitRadius: 20
         },
         {
           label: 'S&P 500',
@@ -30,7 +31,8 @@ export class Dashboard extends Component {
           borderColor: ['rgb(185, 153, 15)'],
           backgroundColor: ['rgb(163, 134, 13)'],
           borderWidth: 1,
-          fill: false
+          fill: false,
+          pointHitRadius: 20
         }],
         subtitle: returnsData[0].subtitle    
        };
@@ -107,7 +109,8 @@ export class Dashboard extends Component {
         title: function(tooltipItem, data) {
           return data.labels[tooltipItem[0].index];
         }
-      }
+      },
+      
     },
     maintainAspectRatio: false
   };
@@ -170,7 +173,8 @@ export class Dashboard extends Component {
         title: function(tooltipItem, data) {
           return data.labels[tooltipItem[0].index];
         }
-      }
+      },
+      
     },
     maintainAspectRatio: false
   };
@@ -184,14 +188,17 @@ export class Dashboard extends Component {
       fill: true,
       backgroundColor: ['rgba(20, 22, 49, 1)'],
       borderColor: ['rgb(163, 134, 13)'],
-      borderWidth: 1
+      borderWidth: 1,
+      pointHitRadius: 20
     },{
       label: 'Portfolio',
       data: performanceData.portfolio,
       borderWidth: 2,
       fill: true,
       backgroundColor: ['rgba(0, 204, 212, .2)'],
-      borderColor: ['rgb(0, 204, 212)']
+      borderColor: ['rgb(0, 204, 212)'],
+      pointHitRadius: 20
+
     }]
   };
 
@@ -237,7 +244,7 @@ export class Dashboard extends Component {
       }
     },
     tooltips: {
-      backgroundColor: 'rgba(2, 171, 254, 1)',
+      
     },
     maintainAspectRatio: false
   };
@@ -249,14 +256,16 @@ export class Dashboard extends Component {
       borderWidth: 2,
       fill: true,
       backgroundColor: 'rgba(0, 204, 212, .2)',
-      borderColor: 'rgb(0, 204, 212)'
+      borderColor: 'rgb(0, 204, 212)',
+      pointHitRadius: 20
     },
     {
       data: Array(cashData.fees_data.length - 2 ).fill(undefined).concat( cashData.fees_data.slice(cashData.fees_data.length - 2, cashData.fees_data.length)),
       borderWidth: 2,
       fill: false,
       borderColor: 'rgb(0, 204, 212)',
-      borderDash: [1,3]
+      borderDash: [1,3],
+      pointHitRadius: 20
     }],
     
   };
@@ -305,7 +314,7 @@ export class Dashboard extends Component {
       }
     },
     tooltips: {
-      backgroundColor: 'rgba(2, 171, 254, 1)',
+      
     },
   };
 
