@@ -1,43 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "081886dabb6f05967d6bedbef03184a9",
+    "revision": "4fa71fd1eb3324728a806303558938c1",
     "url": "/sp500_trader_dashboard/index.html"
   },
   {
-    "revision": "1e1b0b16ce226f9f1a86",
-    "url": "/sp500_trader_dashboard/static/css/3.622e12f1.chunk.css"
+    "revision": "361cbd1d3fecc32ba711",
+    "url": "/sp500_trader_dashboard/static/css/2.22cb0800.chunk.css"
   },
   {
-    "revision": "1dd245b8a44c91cab705",
-    "url": "/sp500_trader_dashboard/static/css/main.973e11aa.chunk.css"
+    "revision": "d91456c8c8f325a90dde",
+    "url": "/sp500_trader_dashboard/static/css/main.d4c474b6.chunk.css"
   },
   {
-    "revision": "c3b050e154b0bb3c789d",
-    "url": "/sp500_trader_dashboard/static/js/2.1457b89b.chunk.js"
+    "revision": "361cbd1d3fecc32ba711",
+    "url": "/sp500_trader_dashboard/static/js/2.bbd0086d.chunk.js"
   },
   {
-    "revision": "9014f75bee2b03e13e1876e3edc1005c",
-    "url": "/sp500_trader_dashboard/static/js/2.1457b89b.chunk.js.LICENSE"
+    "revision": "92e641fd9cbc59bf983c6252a240df43",
+    "url": "/sp500_trader_dashboard/static/js/2.bbd0086d.chunk.js.LICENSE"
   },
   {
-    "revision": "1e1b0b16ce226f9f1a86",
-    "url": "/sp500_trader_dashboard/static/js/3.f1e10414.chunk.js"
+    "revision": "d91456c8c8f325a90dde",
+    "url": "/sp500_trader_dashboard/static/js/main.fc1a2e57.chunk.js"
   },
   {
-    "revision": "6c46089e713fdf01ec7e89132bc85450",
-    "url": "/sp500_trader_dashboard/static/js/3.f1e10414.chunk.js.LICENSE"
-  },
-  {
-    "revision": "f5fb54202f99601ebc06",
-    "url": "/sp500_trader_dashboard/static/js/4.15442083.chunk.js"
-  },
-  {
-    "revision": "1dd245b8a44c91cab705",
-    "url": "/sp500_trader_dashboard/static/js/main.98891d37.chunk.js"
-  },
-  {
-    "revision": "5ee38f02317a0266e31b",
-    "url": "/sp500_trader_dashboard/static/js/runtime-main.bbf41940.js"
+    "revision": "fd1a15fe0774cdb76cce",
+    "url": "/sp500_trader_dashboard/static/js/runtime-main.f6361cac.js"
   },
   {
     "revision": "d42274826fceb5a1b786df1cfeb5a5ef",
@@ -614,66 +602,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ee7f4712ac4553621d85503cb9a130e5",
     "url": "/sp500_trader_dashboard/static/media/eu.ee7f4712.svg"
-  },
-  {
-    "revision": "1a575a4138e5f366474f0e7c5bd614a5",
-    "url": "/sp500_trader_dashboard/static/media/fa-brands-400.1a575a41.woff"
-  },
-  {
-    "revision": "1d5619cd804367cefe6da2d79289218a",
-    "url": "/sp500_trader_dashboard/static/media/fa-brands-400.1d5619cd.svg"
-  },
-  {
-    "revision": "513aa607d398efaccc559916c3431403",
-    "url": "/sp500_trader_dashboard/static/media/fa-brands-400.513aa607.ttf"
-  },
-  {
-    "revision": "592643a83b8541edc52063d84c468700",
-    "url": "/sp500_trader_dashboard/static/media/fa-brands-400.592643a8.eot"
-  },
-  {
-    "revision": "ed311c7a0ade9a75bb3ebf5a7670f31d",
-    "url": "/sp500_trader_dashboard/static/media/fa-brands-400.ed311c7a.woff2"
-  },
-  {
-    "revision": "766913e6c0088ab8c9f73e18b4127bc4",
-    "url": "/sp500_trader_dashboard/static/media/fa-regular-400.766913e6.ttf"
-  },
-  {
-    "revision": "b0e2db3b634d1bc3928e127458d993d8",
-    "url": "/sp500_trader_dashboard/static/media/fa-regular-400.b0e2db3b.eot"
-  },
-  {
-    "revision": "b91d376b8d7646d671cd820950d5f7f1",
-    "url": "/sp500_trader_dashboard/static/media/fa-regular-400.b91d376b.woff2"
-  },
-  {
-    "revision": "c5d109be8edd3de0f60eb472bd9ef691",
-    "url": "/sp500_trader_dashboard/static/media/fa-regular-400.c5d109be.svg"
-  },
-  {
-    "revision": "d1d7e3b4c219fde0f7376c6facfd7149",
-    "url": "/sp500_trader_dashboard/static/media/fa-regular-400.d1d7e3b4.woff"
-  },
-  {
-    "revision": "0c6bfc668a72935760178f91327aed3a",
-    "url": "/sp500_trader_dashboard/static/media/fa-solid-900.0c6bfc66.eot"
-  },
-  {
-    "revision": "37bc7099f6f1ba80236164f22e905837",
-    "url": "/sp500_trader_dashboard/static/media/fa-solid-900.37bc7099.svg"
-  },
-  {
-    "revision": "b9625119ce4300f0ef890a8f3234c773",
-    "url": "/sp500_trader_dashboard/static/media/fa-solid-900.b9625119.ttf"
-  },
-  {
-    "revision": "d745348d289b149026921f197929a893",
-    "url": "/sp500_trader_dashboard/static/media/fa-solid-900.d745348d.woff"
-  },
-  {
-    "revision": "d824df7eb2e268626a2dd9a6a741ac4e",
-    "url": "/sp500_trader_dashboard/static/media/fa-solid-900.d824df7e.woff2"
   },
   {
     "revision": "2649533e1d44a2ef75d5679ef6839b9e",
