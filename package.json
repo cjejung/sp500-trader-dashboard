@@ -1,7 +1,7 @@
 {
   "name": "sp500_trader_dashboard",
   "version": "0.1.0",
-  "homepage": "http://cjejung.github.io/sp500_trader_dashboard",
+  "homepage": "http://cjejung.github.io/sp500-trader-dashboard",
   "private": true,
   "dependencies": {
     "bootstrap": "4.4.1",

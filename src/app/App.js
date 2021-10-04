@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
 import {Line, Bar} from 'react-chartjs-2';
 
 import returnsData from  '../assets/data/returns.json';
