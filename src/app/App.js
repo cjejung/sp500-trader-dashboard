@@ -5,7 +5,7 @@ import returnsData from  '../assets/data/returns.json';
 import indexData from  '../assets/data/index.json';
 import performanceData from  '../assets/data/performance.json';
 import cashData from  '../assets/data/cash.json';
-
+import portfolioData from  '../assets/data/portfolio.json';
 
 const indexColours = indexData.data.map((value) => value > 0 ? 'rgb(0, 204, 212)' : 'rgb(185, 153, 15)');
 
@@ -47,7 +47,8 @@ export class Dashboard extends Component {
           data: returnsData[x].dataPortfolio,
           borderWidth: 2,
           fill: false,
-          borderColor: ['rgb(0, 204, 212)']
+          borderColor: ['rgb(0, 204, 212)'],
+          pointHitRadius: 20
         },
         {
           label: 'S&P 500',
@@ -55,7 +56,9 @@ export class Dashboard extends Component {
           borderColor: ['rgb(185, 153, 15)'],
           backgroundColor: ['rgb(163, 134, 13)'],
           borderWidth: 1,
-          fill: false
+          fill: false,
+          pointHitRadius: 20
+
         }],
         subtitle: returnsData[x].subtitle    
        };
@@ -198,7 +201,6 @@ export class Dashboard extends Component {
       backgroundColor: ['rgba(0, 204, 212, .2)'],
       borderColor: ['rgb(0, 204, 212)'],
       pointHitRadius: 20
-
     }]
   };
 
@@ -244,7 +246,17 @@ export class Dashboard extends Component {
       }
     },
     tooltips: {
-      
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var currentValue = dataset.data[tooltipItem.index];
+          var value = parseFloat((currentValue).toFixed(2));
+          return value;
+        },
+        title: function(tooltipItem, data) {
+          return data.labels[tooltipItem[0].index];
+        }
+      }
     },
     maintainAspectRatio: false
   };
@@ -314,7 +326,18 @@ export class Dashboard extends Component {
       }
     },
     tooltips: {
-      
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var currentValue = dataset.data[tooltipItem.index];
+          var value = parseFloat((currentValue).toFixed(2));
+          return "\u20AC " + value;
+        },
+        title: function(tooltipItem, data) {
+          return data.labels[tooltipItem[0].index];
+        }
+      }
+
     },
   };
 
@@ -540,7 +563,42 @@ export class Dashboard extends Component {
                   </div>{/* card */}
               </div>{/* col */}
             </div>{/* row */}
+            <div className="row row-sm mg-b-20">
+              <div className="col-lg-12 mg-t-20 mg-lg-t-0">
+                <div className="card card-dashboard-one sp500_card">
+                  <div className="card-body">
+                    <div className="table-responsive">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th className="wd-5p">&nbsp;</th>
+                            <th className="wd-45p">Stock</th>
+                            <th>Position (% total)</th>
+                            <th>Expiry</th>
+                          </tr>
+                        </thead>
+                        <tbody>
 
+                          {
+                            portfolioData.map((row, i) => {
+                              return (
+                                <tr>
+                                  <th><small>{row.ticker}</small></th>
+                                  <th><strong>{row.name}</strong></th>
+                                  <th><strong>{row.value.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</strong> ({Math.round(row.ttl_perc*100)}%)</th>
+                                  <th>{row.expiry}</th>
+                                </tr>
+                               );
+                             })
+                           }
+                           
+                        </tbody>
+                      </table>
+                    </div>{/* table */}
+                  </div>{/* card-body */}
+                </div>{/* card */}
+              </div>{/* col */}
+            </div>{/* row */}
           </div>{/* az-content-body */}
         </div>
       </div>
