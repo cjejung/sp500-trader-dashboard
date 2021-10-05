@@ -409,7 +409,7 @@ export class Dashboard extends Component {
                         </div>
                         <div>
                           <label className="mg-b-0 sp500_titles">Gain vs. Invested</label>
-                          <h2>{(performanceData.gain_pct<0?"":"+") + Math.round(performanceData.gain_pct * 100) + "%"}</h2>
+                          <h2>{(performanceData.gain_pct<0?"":"+") + (Math.round(performanceData.gain_pct * 1000)/10).toLocaleString('en-UK', { minimumFractionDigits: 1}) + "%"}</h2>
                         </div>
                       </div>{/* card-body-top */}
                       <div className="performance-chart-wrapper" style={{height:'263px'}}>
@@ -432,7 +432,7 @@ export class Dashboard extends Component {
                         <div className="col-6 d-sm-flex align-items-center">
                           <div>
                             <label className="sp500_titles">Annual Return</label>
-                            <h4>{(performanceData.cagr<0?"":"+") + Math.round(performanceData.cagr * 1000)/10 + "%"}</h4>
+                            <h4>{(performanceData.cagr<0?"":"+") + (Math.round(performanceData.cagr * 1000)/10).toLocaleString('en-UK', { minimumFractionDigits: 1}) + "%"}</h4>
                           </div>
                         </div>{/* col */}
                         <div className="col-6 d-sm-flex align-items-center">
