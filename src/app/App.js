@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Chart,Line, Bar} from 'react-chartjs-2';
+import {Line, Bar} from 'react-chartjs-2';
 
 
 
@@ -277,7 +277,8 @@ export class Dashboard extends Component {
     {
       data: Array(cashData.fees_data.length - 2 ).fill(undefined).concat( cashData.fees_data.slice(cashData.fees_data.length - 2, cashData.fees_data.length)),
       borderWidth: 2,
-      fill: false,
+      fill: true,
+      backgroundColor: 'rgba(0, 204, 212, .2)',
       borderColor: 'rgb(0, 204, 212)',
       borderDash: [1,3],
       pointHitRadius: 20
@@ -450,7 +451,7 @@ export class Dashboard extends Component {
                     <div className="card card-dashboard-five sp500_card">
                       <div className="card-header">
                             <h6 className="card-title " > <i className="fa fa-line-chart"/> Performance</h6>
-                            <p className="card-text">since 21 Sep 2021</p>
+                            <p className="card-text">since 13 Oct 2021</p>
                       </div>{/* card-header */}
                       <div className="card-body row row-sm">
                         <div className="col-6 d-sm-flex align-items-center">

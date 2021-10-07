@@ -10,9 +10,6 @@
     position: relative;
     line-height: normal;
 
-    @include hover-focus() {
-      color: $gray-900;
-    }
 
     + .nav-link {
         padding-top: 12px;
@@ -110,7 +107,6 @@
 .az-nav-dark {
   .nav-link {
     color: rgba(#fff, .7);
-    @include hover-focus() { color: #fff; }
 
     + .nav-link { border-color: $gray-700; }
     &.active { color: $az-color-primary; }
@@ -132,7 +128,7 @@
     color: $gray-700;
     position: relative;
 
-    @include hover-focus() { color: $gray-900; }
+    
 
     + .nav-link {
       margin-top: 15px;
@@ -170,7 +166,7 @@
   &.az-nav-dark {
     .nav-link {
       color: rgba(#fff, .7);
-      @include hover-focus() { color: #fff; }
+      
 
       &.active {
         color: #fff;
@@ -201,7 +197,7 @@
       background-color: $gray-400;
       background-image: none;
 
-      @include hover-focus() { background-color: darken($gray-400, 5%); }
+      
 
       &::before {
         font-family: 'Ionicons';
@@ -252,7 +248,7 @@
     white-space: nowrap;
     background-color: $gray-200;
 
-    @include hover-focus() { background-color: $gray-100; }
+    
 
     &.active {
       background-color: #fff;
