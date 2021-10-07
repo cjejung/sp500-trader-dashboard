@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import {Line, Bar} from 'react-chartjs-2';
+import {Chart,Line, Bar} from 'react-chartjs-2';
+
+
 
 import returnsData from  '../assets/data/returns.json';
 import indexData from  '../assets/data/index.json';
@@ -13,8 +15,9 @@ const datasetKeyProvider=()=>{
      return btoa(Math.random()).substring(0,12)
  } 
 
+
 export class Dashboard extends Component { 
- 
+  
   state = {
         labels: returnsData[0].labels,
         datasets: [{
@@ -112,10 +115,10 @@ export class Dashboard extends Component {
         title: function(tooltipItem, data) {
           return data.labels[tooltipItem[0].index];
         }
-      },
-      
+      },      
     },
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    responsive: true,
   };
 
 
@@ -386,7 +389,6 @@ export class Dashboard extends Component {
       }
     }
   };
-
   
   render() {
     return (
