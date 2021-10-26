@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sp500-trader-dashboard/static/css/main.a8d16ef7.chunk.css",
-    "main.js": "/sp500-trader-dashboard/static/js/main.1e632b30.chunk.js",
-    "main.js.map": "/sp500-trader-dashboard/static/js/main.1e632b30.chunk.js.map",
+    "main.js": "/sp500-trader-dashboard/static/js/main.315b8ac1.chunk.js",
+    "main.js.map": "/sp500-trader-dashboard/static/js/main.315b8ac1.chunk.js.map",
     "runtime-main.js": "/sp500-trader-dashboard/static/js/runtime-main.a996e4bf.js",
     "runtime-main.js.map": "/sp500-trader-dashboard/static/js/runtime-main.a996e4bf.js.map",
     "static/css/2.7fff521f.chunk.css": "/sp500-trader-dashboard/static/css/2.7fff521f.chunk.css",
     "static/js/2.2daedd18.chunk.js": "/sp500-trader-dashboard/static/js/2.2daedd18.chunk.js",
     "static/js/2.2daedd18.chunk.js.map": "/sp500-trader-dashboard/static/js/2.2daedd18.chunk.js.map",
     "index.html": "/sp500-trader-dashboard/index.html",
-    "precache-manifest.e7999fac49de098461bca954f22d8933.js": "/sp500-trader-dashboard/precache-manifest.e7999fac49de098461bca954f22d8933.js",
+    "precache-manifest.91ffcefaf19988c83cedc686e31cb9b1.js": "/sp500-trader-dashboard/precache-manifest.91ffcefaf19988c83cedc686e31cb9b1.js",
     "service-worker.js": "/sp500-trader-dashboard/service-worker.js",
     "static/css/2.7fff521f.chunk.css.map": "/sp500-trader-dashboard/static/css/2.7fff521f.chunk.css.map",
     "static/css/main.a8d16ef7.chunk.css.map": "/sp500-trader-dashboard/static/css/main.a8d16ef7.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.7fff521f.chunk.css",
     "static/js/2.2daedd18.chunk.js",
     "static/css/main.a8d16ef7.chunk.css",
-    "static/js/main.1e632b30.chunk.js"
+    "static/js/main.315b8ac1.chunk.js"
   ]
 }
