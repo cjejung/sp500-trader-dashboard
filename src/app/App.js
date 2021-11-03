@@ -109,7 +109,7 @@ export class Dashboard extends Component {
         label: function(tooltipItem, data) {
           var dataset = data.datasets[tooltipItem.datasetIndex];
           var currentValue = dataset.data[tooltipItem.index];
-          var percentage = parseFloat((currentValue*100).toFixed(1));
+          var percentage = parseFloat((currentValue*100).toFixed(2));
           return percentage + '%';
         },
         title: function(tooltipItem, data) {
@@ -253,7 +253,7 @@ export class Dashboard extends Component {
         label: function(tooltipItem, data) {
           var dataset = data.datasets[tooltipItem.datasetIndex];
           var currentValue = dataset.data[tooltipItem.index];
-          var value = parseFloat((currentValue).toFixed(2));
+          var value = parseFloat((currentValue).toFixed(3));
           return value;
         },
         title: function(tooltipItem, data) {
