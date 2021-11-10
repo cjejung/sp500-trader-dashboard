@@ -575,8 +575,8 @@ export class Dashboard extends Component {
                           <tr>
                             <th className="wd-5p">&nbsp;</th>
                             <th className="wd-45p">Stock</th>
-                            <th>Position (% total)</th>
-                            <th>Expiry</th>
+                            <th>Position</th>
+                            <th>Performance score</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -587,8 +587,8 @@ export class Dashboard extends Component {
                                 <tr>
                                   <th><small>{row.ticker}</small></th>
                                   <th><strong>{row.name}</strong></th>
-                                  <th><strong>{row.value.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</strong> ({Math.round(row.ttl_perc*100)}%)</th>
-                                  <th>{row.expiry}</th>
+                                  <th><strong>{row.value.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</strong> </th>
+                                  <th>{ Math.round(row.prob*10000)/100}%</th>
                                 </tr>
                                );
                              })
