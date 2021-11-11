@@ -575,8 +575,9 @@ export class Dashboard extends Component {
                           <tr>
                             <th className="wd-5p">&nbsp;</th>
                             <th className="wd-45p">Stock</th>
-                            <th>Position</th>
-                            <th>Performance score</th>
+                            <td align="right">Position</td>
+                            <td align="right">Return</td>
+                            <td align= "center">Buy / Sell</td>
                           </tr>
                         </thead>
                         <tbody>
@@ -585,10 +586,11 @@ export class Dashboard extends Component {
                             portfolioData.map((row, i) => {
                               return (
                                 <tr>
-                                  <th><small>{row.ticker}</small></th>
-                                  <th><strong>{row.name}</strong></th>
-                                  <th><strong>{row.value.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</strong> </th>
-                                  <th>{ Math.round(row.prob*10000)/100}%</th>
+                                  <td><small>{row.ticker}</small></td>
+                                  <td><strong>{row.name}</strong></td>
+                                  <td align= "right">€{row.value.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})} </td>
+                                  <td  align= "right"><strong>{(row.return_ttl<0?"":"+") + row.return_ttl.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</strong> ({(row.return_pct<0?"":"+") + Math.round(row.return_pct * 1000)/10 }%)</td>
+                                  <td  align= "center"><small>{row.buy_sell}</small></td>
                                 </tr>
                                );
                              })
