@@ -367,6 +367,9 @@ export class Dashboard extends Component {
         gridLines: {
           drawBorder: false,
           display: false
+        },
+        ticks: {
+          min: 0,
         }
       }],
       xAxes: [{
@@ -374,6 +377,7 @@ export class Dashboard extends Component {
         
         ticks: {
           display: false,
+          
         },
         gridLines: {
           drawBorder: false,
@@ -581,7 +585,7 @@ export class Dashboard extends Component {
                             <th className="wd-45p">Stock</th>
                             <td align="right">Position</td>
                             <td align="right">Return</td>
-                            <td align= "center">Buy / Sell</td>
+                            <td align= "center">Sell / Under / Hold / Buy</td>
                           </tr>
                         </thead>
                         <tbody>
@@ -614,7 +618,9 @@ export class Dashboard extends Component {
                     <h6 className="card-title sp500_title">Today's buys</h6>
                   </div>{/* card header*/}
                   <div className="card-body">
-                    
+                      {tobuyData.map(stock =>
+                        <div> {stock} </div>
+                       )}
                   </div>{/* card body*/}
                 </div>{/* card */}
               </div>{/* col */}
