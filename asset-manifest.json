@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/sp500-trader-dashboard/static/css/main.ef741c36.chunk.css",
-    "main.js": "/sp500-trader-dashboard/static/js/main.5f6b3d09.chunk.js",
-    "main.js.map": "/sp500-trader-dashboard/static/js/main.5f6b3d09.chunk.js.map",
+    "main.js": "/sp500-trader-dashboard/static/js/main.e41669e1.chunk.js",
+    "main.js.map": "/sp500-trader-dashboard/static/js/main.e41669e1.chunk.js.map",
     "runtime-main.js": "/sp500-trader-dashboard/static/js/runtime-main.a996e4bf.js",
     "runtime-main.js.map": "/sp500-trader-dashboard/static/js/runtime-main.a996e4bf.js.map",
     "static/css/2.e710702a.chunk.css": "/sp500-trader-dashboard/static/css/2.e710702a.chunk.css",
-    "static/js/2.6fec7f18.chunk.js": "/sp500-trader-dashboard/static/js/2.6fec7f18.chunk.js",
-    "static/js/2.6fec7f18.chunk.js.map": "/sp500-trader-dashboard/static/js/2.6fec7f18.chunk.js.map",
+    "static/js/2.ec7f9af3.chunk.js": "/sp500-trader-dashboard/static/js/2.ec7f9af3.chunk.js",
+    "static/js/2.ec7f9af3.chunk.js.map": "/sp500-trader-dashboard/static/js/2.ec7f9af3.chunk.js.map",
     "index.html": "/sp500-trader-dashboard/index.html",
-    "precache-manifest.05b038b93d449946228024a192773972.js": "/sp500-trader-dashboard/precache-manifest.05b038b93d449946228024a192773972.js",
+    "precache-manifest.abd8e815a1472ee71588447f760951da.js": "/sp500-trader-dashboard/precache-manifest.abd8e815a1472ee71588447f760951da.js",
     "service-worker.js": "/sp500-trader-dashboard/service-worker.js",
     "static/css/2.e710702a.chunk.css.map": "/sp500-trader-dashboard/static/css/2.e710702a.chunk.css.map",
     "static/css/main.ef741c36.chunk.css.map": "/sp500-trader-dashboard/static/css/main.ef741c36.chunk.css.map",
-    "static/js/2.6fec7f18.chunk.js.LICENSE.txt": "/sp500-trader-dashboard/static/js/2.6fec7f18.chunk.js.LICENSE.txt",
+    "static/js/2.ec7f9af3.chunk.js.LICENSE.txt": "/sp500-trader-dashboard/static/js/2.ec7f9af3.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/sp500-trader-dashboard/static/media/zw.8b885465.svg",
     "static/media/font-awesome.min.css": "/sp500-trader-dashboard/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.a996e4bf.js",
     "static/css/2.e710702a.chunk.css",
-    "static/js/2.6fec7f18.chunk.js",
+    "static/js/2.ec7f9af3.chunk.js",
     "static/css/main.ef741c36.chunk.css",
-    "static/js/main.5f6b3d09.chunk.js"
+    "static/js/main.e41669e1.chunk.js"
   ]
 }
