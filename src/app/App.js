@@ -8,6 +8,7 @@ import indexData from  '../assets/data/index.json';
 import performanceData from  '../assets/data/performance.json';
 import cashData from  '../assets/data/cash.json';
 import portfolioData from  '../assets/data/portfolio.json';
+import tobuyData from  '../assets/data/to_buy.json';
 
 const indexColours = indexData.data.map((value) => value > 0 ? 'rgb(0, 204, 212)' : 'rgb(185, 153, 15)');
 
@@ -391,7 +392,10 @@ export class Dashboard extends Component {
     }
   };
   
+  
+
   render() {
+    console.log(tobuyData)
     return (
       <div>
         <div className="container p-md-0">
@@ -600,6 +604,18 @@ export class Dashboard extends Component {
                       </table>
                     </div>{/* table */}
                   </div>{/* card-body */}
+                </div>{/* card */}
+              </div>{/* col */}
+            </div>{/* row */}
+            <div className="row row-sm mg-b-20">{/* row */}
+              <div  className="col-lg-12 mg-t-20 mg-lg-t-0">{/* col */}
+                <div className="card card-dashboard-one sp500_card">{/* card */}
+                  <div className="card-header">{/* card header */}
+                    <h6 className="card-title sp500_title">Today's buys</h6>
+                  </div>{/* card header*/}
+                  <div className="card-body">
+                    
+                  </div>{/* card body*/}
                 </div>{/* card */}
               </div>{/* col */}
             </div>{/* row */}
