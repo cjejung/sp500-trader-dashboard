@@ -3,6 +3,7 @@ import {Line, Bar} from 'react-chartjs-2';
 
 
 
+
 import returnsData from  '../assets/data/returns.json';
 import indexData from  '../assets/data/index.json';
 import performanceData from  '../assets/data/performance.json';
@@ -363,13 +364,11 @@ export class Dashboard extends Component {
         display: false,
         ticks: {
           display: false,
+          min: 0,
         },
         gridLines: {
           drawBorder: false,
           display: false
-        },
-        ticks: {
-          min: 0,
         }
       }],
       xAxes: [{
@@ -581,11 +580,10 @@ export class Dashboard extends Component {
                       <table className="table">
                         <thead>
                           <tr>
-                            <th className="wd-5p">&nbsp;</th>
                             <th className="wd-45p">Stock</th>
                             <td align="right">Position</td>
                             <td align="right">Return</td>
-                            <td align= "center">Sell / Under / Hold / Buy</td>
+                            <td align= "center">Sell / Buy</td>
                           </tr>
                         </thead>
                         <tbody>
@@ -594,7 +592,6 @@ export class Dashboard extends Component {
                             portfolioData.map((row, i) => {
                               return (
                                 <tr>
-                                  <td><small>{row.ticker}</small></td>
                                   <td><strong>{row.name}</strong></td>
                                   <td align= "right">€{row.value.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})} </td>
                                   <td  align= "right"><strong>{(row.return_ttl<0?"":"+") + row.return_ttl.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</strong> ({(row.return_pct<0?"":"+") + Math.round(row.return_pct * 1000)/10 }%)</td>
@@ -625,6 +622,7 @@ export class Dashboard extends Component {
                 </div>{/* card */}
               </div>{/* col */}
             </div>{/* row */}
+
           </div>{/* az-content-body */}
         </div>
       </div>
