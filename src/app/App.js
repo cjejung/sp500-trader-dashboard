@@ -38,6 +38,14 @@ export class Dashboard extends Component {
           borderWidth: 1,
           fill: false,
           pointHitRadius: 20
+        },
+        {
+          label: 'Median Return',
+          data: Array(5).fill(1),
+          borderWidth: 2,
+          fill: false,
+          borderColor: ['rgb(0, 204, 212)'],
+          pointHitRadius: 20
         }],
         subtitle: returnsData[0].subtitle    
        };
