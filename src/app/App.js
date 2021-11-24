@@ -17,6 +17,9 @@ const datasetKeyProvider=()=>{
      return btoa(Math.random()).substring(0,12)
  } 
 
+const horz_ln_upper = [0.007,0.023,0.075,.7]
+const horz_ln_median = [NaN,0.006,0.03,0.5]
+const horz_ln_lower = [-0.004,-0.007,-0.005,0.3]
 
 export class Dashboard extends Component { 
   
@@ -40,12 +43,31 @@ export class Dashboard extends Component {
           pointHitRadius: 20
         },
         {
+          label: 'Upper quartile',
+          data: Array(returnsData[0].dataSP500.length).fill(horz_ln_upper[0]),
+          fill: true, 
+          borderWidth: 1,
+          borderColor: ['rgba(148, 151, 193,.2)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          pointHitRadius: 0
+        },
+        {
           label: 'Median Return',
-          data: Array(5).fill(1),
-          borderWidth: 2,
-          fill: false,
-          borderColor: ['rgb(0, 204, 212)'],
-          pointHitRadius: 20
+          data: Array(returnsData[0].dataSP500.length).fill(horz_ln_median[0]),
+          fill: false, 
+          borderWidth: 1,
+          borderColor: ['rgba(148, 151, 193,.5)'],
+          borderDash: [2,3],
+          pointHitRadius: 0
+        },
+        {
+          label: 'Lower quartile',
+          data: Array(returnsData[0].dataSP500.length).fill(horz_ln_lower[0]),
+          fill: true, 
+          borderWidth: 1,
+          borderColor: ['rgba(148, 151, 193,.2)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          pointHitRadius: 0
         }],
         subtitle: returnsData[0].subtitle    
        };
@@ -72,6 +94,33 @@ export class Dashboard extends Component {
           fill: false,
           pointHitRadius: 20
 
+        },
+        {
+          label: 'Upper quartile',
+          data: Array(returnsData[0].dataSP500.length).fill(horz_ln_upper[x]),
+          fill: true, 
+          borderWidth: 1,
+          borderColor: ['rgba(148, 151, 193,.2)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          pointHitRadius: 0
+        },
+        {
+          label: 'Median Return',
+          data: Array(returnsData[0].dataSP500.length).fill(horz_ln_median[x]),
+          fill: false, 
+          borderWidth: 1,
+          borderColor: ['rgba(148, 151, 193,.5)'],
+          borderDash: [2,3],
+          pointHitRadius: 0
+        },
+        {
+          label: 'Lower quartile',
+          data: Array(returnsData[0].dataSP500.length).fill(horz_ln_lower[x]),
+          fill: true, 
+          borderWidth: 1,
+          borderColor: ['rgba(148, 151, 193,.2)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          pointHitRadius: 0
         }],
         subtitle: returnsData[x].subtitle    
        };
@@ -83,7 +132,7 @@ export class Dashboard extends Component {
       xAxes: [{
         gridLines: {
           display: false,
-          lineWidth: 100,
+          lineWidth: 200,
           borderColor: ['rgb(148, 151, 193)'],
         }
       }],
@@ -95,16 +144,21 @@ export class Dashboard extends Component {
         fontColor: 'rgb(148, 151, 193)'
         },
         gridLines: {
-          drawBorder: true,
-          borderDash: [1,3],
-          
-          zeroLineColor: 'rgba(148, 151, 193,.3)'
+          lineWidth: 0,
+          zeroLineWidth: 2,
+          zeroLineColor: 'rgba(148, 151, 193,.7)'
         }
-      }]
+      },]
     },
     legend: {
       display: true,
-      position: 'top'
+      position: 'top',
+      labels: {
+                filter: function(item, chart) {
+                    // Logic to remove a particular legend item goes here
+                    return !item.text.includes('Median Return') & !item.text.includes('Upper quartile') & !item.text.includes('Lower quartile');
+                }
+            }
     },
     elements: {
       point: {
