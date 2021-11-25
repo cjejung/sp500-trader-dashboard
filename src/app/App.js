@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Line, Bar} from 'react-chartjs-2';
+import * as zoom from "chartjs-plugin-zoom";
 
 
 
@@ -31,13 +32,14 @@ export class Dashboard extends Component {
           borderWidth: 2,
           fill: false,
           borderColor: ['rgb(0, 204, 212)'],
+          backgroundColor: ['rgb(0, 204, 212)'],
           pointHitRadius: 20
         },
         {
           label: 'S&P 500',
           data: returnsData[0].dataSP500,
           borderColor: ['rgb(185, 153, 15)'],
-          backgroundColor: ['rgb(163, 134, 13)'],
+          backgroundColor: ['rgb(185, 153, 15)'],
           borderWidth: 1,
           fill: false,
           pointHitRadius: 20
@@ -47,8 +49,8 @@ export class Dashboard extends Component {
           data: Array(returnsData[0].dataSP500.length).fill(horz_ln_upper[0]),
           fill: true, 
           borderWidth: 1,
-          borderColor: ['rgba(148, 151, 193,.2)'],
-          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          borderColor: ['rgba(148, 151, 193,.3)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.3)'],
           pointHitRadius: 0
         },
         {
@@ -65,8 +67,17 @@ export class Dashboard extends Component {
           data: Array(returnsData[0].dataSP500.length).fill(horz_ln_lower[0]),
           fill: true, 
           borderWidth: 1,
-          borderColor: ['rgba(148, 151, 193,.2)'],
-          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          borderColor: ['rgba(148, 151, 193,.3)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.3)'],
+          pointHitRadius: 0
+        },
+        {
+          label: 'Zero Line',
+          data: Array(returnsData[0].dataSP500.length).fill(0),
+          fill: true, 
+          borderWidth: 2,
+          borderColor: ['rgba(252, 252, 252,.6)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.3)'],
           pointHitRadius: 0
         }],
         subtitle: returnsData[0].subtitle    
@@ -83,13 +94,14 @@ export class Dashboard extends Component {
           borderWidth: 2,
           fill: false,
           borderColor: ['rgb(0, 204, 212)'],
+          backgroundColor: ['rgb(0, 204, 212)'],
           pointHitRadius: 20
         },
         {
           label: 'S&P 500',
           data: returnsData[x].dataSP500,
           borderColor: ['rgb(185, 153, 15)'],
-          backgroundColor: ['rgb(163, 134, 13)'],
+          backgroundColor: ['rgb(185, 153, 15)'],
           borderWidth: 1,
           fill: false,
           pointHitRadius: 20
@@ -100,8 +112,8 @@ export class Dashboard extends Component {
           data: Array(returnsData[0].dataSP500.length).fill(horz_ln_upper[x]),
           fill: true, 
           borderWidth: 1,
-          borderColor: ['rgba(148, 151, 193,.2)'],
-          backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+          borderColor: ['rgba(148, 151, 193,.3)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.3)'],
           pointHitRadius: 0
         },
         {
@@ -118,7 +130,16 @@ export class Dashboard extends Component {
           data: Array(returnsData[0].dataSP500.length).fill(horz_ln_lower[x]),
           fill: true, 
           borderWidth: 1,
-          borderColor: ['rgba(148, 151, 193,.2)'],
+          borderColor: ['rgba(148, 151, 193,.3)'],
+          backgroundColor: ['rgba(0, 0, 0, 0.3)'],
+          pointHitRadius: 0
+        },
+        {
+          label: 'Zero Line',
+          data: Array(returnsData[0].dataSP500.length).fill(0),
+          fill: true, 
+          borderWidth: 2,
+          borderColor: ['rgba(252, 252, 252,.6)'],
           backgroundColor: ['rgba(0, 0, 0, 0.1)'],
           pointHitRadius: 0
         }],
@@ -128,37 +149,67 @@ export class Dashboard extends Component {
   }
 
   returnsChartOptions = {
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: false,
-          lineWidth: 200,
-          borderColor: ['rgb(148, 151, 193)'],
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          callback: function(value, index, values) {
-            return Math.round(value * 1000) / 10 + "%"
+    
+   scales: {
+      x: {
+          grid: {
+              display: false
           },
-        fontColor: 'rgb(148, 151, 193)'
-        },
-        gridLines: {
-          lineWidth: 0,
-          zeroLineWidth: 2,
-          zeroLineColor: 'rgba(148, 151, 193,.7)'
-        }
-      },]
+          ticks: {
+              color: 'rgba(148, 151, 193)'
+          }
+      },
+      y: {
+          grid: {
+              display: false
+          },
+          ticks: {
+              callback: function(value, index, values) {
+                return Math.round(value * 1000) / 10 + "%"
+              },
+              color: 'rgba(148, 151, 193)'
+          },
+      }
     },
-    legend: {
-      display: true,
-      position: 'top',
-      labels: {
+    plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: {
                 filter: function(item, chart) {
                     // Logic to remove a particular legend item goes here
-                    return !item.text.includes('Median Return') & !item.text.includes('Upper quartile') & !item.text.includes('Lower quartile');
+                    return !item.text.includes('Median Return') & !item.text.includes('Upper quartile') & !item.text.includes('Lower quartile')& !item.text.includes('Zero Line');
                 }
             }
+        },
+        tooltip: {
+            callbacks: {
+                
+                label: function(context) {
+                    var label = context.dataset.label || '';
+                    if (label) {
+                            label += ': ';
+                        }
+                    if (context.parsed.y !== null) {
+                            label += Math.round(context.parsed.y * 10000)/100 + "%";
+                        }
+                        return label;
+                        //var dataset = data.dataset[tooltipItem.datasetIndex];
+                        
+                    }
+          },
+            zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+        },
+        
+        
     },
     elements: {
       point: {
@@ -167,19 +218,6 @@ export class Dashboard extends Component {
       line: {
         tension: 0
       }
-    },
-    tooltips: {
-      callbacks: {
-        label: function(tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var currentValue = dataset.data[tooltipItem.index];
-          var percentage = parseFloat((currentValue*100).toFixed(2));
-          return percentage + '%';
-        },
-        title: function(tooltipItem, data) {
-          return data.labels[tooltipItem[0].index];
-        }
-      },      
     },
     maintainAspectRatio: false,
     responsive: true,
