@@ -1,7 +1,6 @@
+import { Chart } from 'chart.js';
 import React, { Component } from 'react'
-import {Line, Bar} from 'react-chartjs-2';
-import * as zoom from "chartjs-plugin-zoom";
-
+import {Line, Bar} from 'react-chartjs-2'
 
 
 
@@ -149,7 +148,8 @@ export class Dashboard extends Component {
   }
 
   returnsChartOptions = {
-    
+   responsive: true,
+   maintainAspectRatio: false,
    scales: {
       x: {
           grid: {
@@ -172,6 +172,7 @@ export class Dashboard extends Component {
       }
     },
     plugins: {
+        
         legend: {
           display: true,
           position: 'top',
@@ -184,43 +185,20 @@ export class Dashboard extends Component {
         },
         tooltip: {
             callbacks: {
-                
                 label: function(context) {
                     var label = context.dataset.label || '';
-                    if (label) {
-                            label += ': ';
-                        }
-                    if (context.parsed.y !== null) {
-                            label += Math.round(context.parsed.y * 10000)/100 + "%";
-                        }
-                        return label;
-                        //var dataset = data.dataset[tooltipItem.datasetIndex];
-                        
-                    }
-          },
-            zoom: {
-          wheel: {
-            enabled: true,
-          },
-          pinch: {
-            enabled: true
-          },
-          mode: 'xy',
-        }
-        },
-        
-        
+                    if (label) { label += ': '; }
+                    if (context.parsed.y !== null) { label += Math.round(context.parsed.y * 10000)/100 + "%";}
+                    return label;    
+                }
+            },
+        },     
     },
     elements: {
       point: {
         radius: 0
-      },
-      line: {
-        tension: 0
       }
     },
-    maintainAspectRatio: false,
-    responsive: true,
   };
 
 
@@ -231,33 +209,46 @@ export class Dashboard extends Component {
       data: indexData.data,
       borderWidth: 1,
       fill: false,
-      borderColor: indexColours,
+      borderColor: 'rgba(0, 0, 0, 0)',
       backgroundColor: indexColours,
+      barPercentage: 1.2
     }]
   };
+
   indexChartOptions = {
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: false,
-          lineWidth: 100,
-          borderColor: ['rgb(148, 151, 193)'],
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          callback: function(value, index, values) {
-            return Math.round((value +1) *100)
+   scales: {
+      x: {
+          grid: {
+              display: false
           },
-        fontColor: 'rgb(148, 151, 193)'
+          ticks: {
+              color: 'rgba(148, 151, 193)'
+          }
+      },
+      y: {
+          grid: {
+              display: false
+          },
+          ticks: {
+              callback: function(value, index, values) {
+                return Math.round((value + 1) * 1000)/10
+              },
+              color: 'rgba(148, 151, 193)'
+          },
+      }
+    },
+    plugins: {
+        legend: {
+          display: false
         },
-        gridLines: {
-          drawBorder: true,
-          borderDash: [1,3],
-          
-          zeroLineColor: 'rgba(148, 151, 193,.3)'
-        }
-      }]
+        tooltip: {
+            callbacks: {
+                label: function(context) {
+                    var label = Math.round((context.parsed.y + 1)*10000 )/100;
+                    return label;    
+                }
+            },
+        },     
     },
     legend: {
       display: false,
@@ -265,32 +256,22 @@ export class Dashboard extends Component {
     elements: {
       point: {
         radius: 0
-      },
-      line: {
-        tension: 0
       }
-    },
-    tooltips: {
-      callbacks: {
-        label: function(tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var currentValue = dataset.data[tooltipItem.index];
-          var index = parseFloat(((currentValue +1)*100 ).toFixed(1));
-          return index;
-        },
-        title: function(tooltipItem, data) {
-          return data.labels[tooltipItem[0].index];
-        }
-      },
-      
-    },
-    maintainAspectRatio: false
+    }
   };
 
 
   PerformanceChartData = {
     labels: performanceData.labels,
     datasets: [{
+      label: 'Portfolio',
+      data: performanceData.portfolio,
+      borderWidth: 2,
+      fill: false,
+      backgroundColor: ['rgba(0, 204, 212, .2)'],
+      borderColor: ['rgb(0, 204, 212)'],
+      pointHitRadius: 20
+    },{
       label: 'S&P500',
       data: performanceData.sp500,
       fill: true,
@@ -301,69 +282,53 @@ export class Dashboard extends Component {
     },{
       label: 'Portfolio',
       data: performanceData.portfolio,
-      borderWidth: 2,
+      borderWidth: 0,
       fill: true,
       backgroundColor: ['rgba(0, 204, 212, .2)'],
       borderColor: ['rgb(0, 204, 212)'],
-      pointHitRadius: 20
+      pointHitRadius: 0
     }]
   };
 
   PerformanceChartOptions = {
     scales: {
-      yAxes: [{
+      y: {
         display: true,
-        gridLines: {
-          drawBorder: false,
+        grid: {
           display: false,
-          drawTicks: false
         },
         ticks: {
           display: false
         }
-      }],
-      xAxes: [{
+      },
+      x: {
         display: false,
-        position: 'bottom',
-        gridLines: {
-          drawBorder: false,
+        grid: {
           display: false,
-          drawTicks: false,
         },
-        ticks: {
-          beginAtZero: false,
-          stepSize: 10,
-          fontColor: "#a7afb7",
-          padding: 10,
+        ticks:  {
+          stepSize: 10
         }
-      }],
+      },
     },
-    legend: {
-      display: false,
-      position: 'top'
+    plugins: {
+        legend: { display: false},
+        tooltip: {
+            callbacks: {
+                label: function(context) {
+                    var label = context.dataset.label || '';
+                    if (label) { label += ': '; }
+                    if (context.parsed.y !== null) { label += Math.round(context.parsed.y * 1000)/1000}
+                    return label;    
+                }
+            },
+        },     
     },
     elements: {
       point: {
         radius: 0
-      },
-      line: {
-        tension: 0
       }
     },
-    tooltips: {
-      callbacks: {
-        label: function(tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var currentValue = dataset.data[tooltipItem.index];
-          var value = parseFloat((currentValue).toFixed(3));
-          return value;
-        },
-        title: function(tooltipItem, data) {
-          return data.labels[tooltipItem[0].index];
-        }
-      }
-    },
-    maintainAspectRatio: false
   };
 
   feesChartData = {
@@ -390,27 +355,21 @@ export class Dashboard extends Component {
 
   feesChartOptions = {
     scales: {
-      yAxes: [{
+      y: {
         display: false,
-        gridLines: {
-          drawBorder: false,
+        grid: {
           display: false,
-          drawTicks: false,
         },
         ticks: {
           display: false,
           beginAtZero: true,
-          min: 0,
-          
+          min: 0,          
         }
-      }],
-      xAxes: [{
+      },
+      x: {
         display: false,
-        position: 'bottom',
-        gridLines: {
-          drawBorder: false,
+        grid: {
           display: false,
-          drawTicks: false,
         },
         ticks: {
           beginAtZero: true,
@@ -418,33 +377,19 @@ export class Dashboard extends Component {
           fontColor: "#a7afb7",
           padding: 10,
         }
-      }],
+      },
     },
-    legend: {
-      display: false,
+    plugins: {
+        legend: {
+            display: false
+        }
     },
     elements: {
       point: {
         radius: 0
-      },
-      line: {
-        tension: 0
       }
     },
-    tooltips: {
-      callbacks: {
-        label: function(tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var currentValue = dataset.data[tooltipItem.index];
-          var value = parseFloat((currentValue).toFixed(2));
-          return "\u20AC " + value;
-        },
-        title: function(tooltipItem, data) {
-          return data.labels[tooltipItem[0].index];
-        }
-      }
 
-    },
   };
 
   tradesChartData = {
@@ -460,38 +405,40 @@ export class Dashboard extends Component {
 
   tradesChartOptions = {
     scales: {
-      yAxes: [{
+      y: {
         display: false,
         ticks: {
           display: false,
           min: 0,
         },
-        gridLines: {
+        grid: {
           drawBorder: false,
           display: false
         }
-      }],
-      xAxes: [{
+      },
+      x: {
         display: false,
         
         ticks: {
           display: false,
           
         },
-        gridLines: {
+        grid: {
           drawBorder: false,
           display: false
         }
-      }],
+      },
       barThickness: 8,
     },
-    legend: {
-      display: false
-    },
-    elements: {
-      point: {
-        radius: 0
-      }
+    plugins: {
+        legend: {
+          display: false
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        }
     }
   };
   
@@ -570,7 +517,7 @@ export class Dashboard extends Component {
                         <div className="col-6 d-sm-flex align-items-center">
                           <div>
                             <label className="sp500_titles">Index vs SPX</label>
-                            <h4>{Math.round(performanceData.index_spx)}</h4>
+                            <h4>{Math.round(performanceData.index_spx*10)/10}</h4>
                           </div>
                         </div>{/* col */}
                       </div>{/* card-body */}
@@ -586,14 +533,14 @@ export class Dashboard extends Component {
                       <div className="card-body row row-sm">
                         <div className="col-6 d-sm-flex align-items-center">
                           <div>
-                            <label className="sp500_titles">&#36; Dollar</label>
-                            <h4>{cashData.cash_usd.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</h4>
+                            <label className="sp500_titles">Dollar</label>
+                            <h4><small>&#36;</small>{cashData.cash_usd.toLocaleString('en-UK',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h4>
                           </div>
                         </div>{/* col */}
                         <div className="col-6 d-sm-flex align-items-center">
                           <div>
-                            <label className="sp500_titles">&euro; Euro </label>
-                            <h4>{cashData.cash_eur.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</h4>
+                            <label className="sp500_titles">Euro </label>
+                            <h4><small>&euro;</small>{cashData.cash_eur.toLocaleString('en-UK',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h4>
                           </div>
                         </div>{/* col */}
                       </div>{/* card-body */}
@@ -609,8 +556,8 @@ export class Dashboard extends Component {
                         <p>trades opened last month</p>
                       </div>{/* card-header */}
                       <div className="card-body">
-                        <div className="chart-wrapper">
-                          <Bar data={this.tradesChartData} options={this.tradesChartOptions} />
+                        <div className="chart-wrapper" style={{top:'20px',height:'100px',width:'200px'}}>
+                          <Bar data={this.tradesChartData} options={this.tradesChartOptions} top={"200%"}/>
                         </div>{/* chart-wrapper */}
                       </div>{/* card-body */}
                     </div>{/* card */}
@@ -622,8 +569,8 @@ export class Dashboard extends Component {
                         <p>last month EUR fees</p>
                       </div>{/* card-header */}
                       <div className="card-body">
-                        <div className="chart-wrapper">
-                          <Line data={this.feesChartData} options={this.feesChartOptions} datasetKeyProvider={datasetKeyProvider}  />
+                        <div className="chart-wrapper" style={{top:'20px',height:'100px',width:'200px'}}>
+                          <Line data={this.feesChartData} options={this.feesChartOptions} datasetKeyProvider={datasetKeyProvider} height={"100%"}/>
                         </div>{/* chart-wrapper */}
                       </div>{/* card-body */}
                     </div>{/* card */}

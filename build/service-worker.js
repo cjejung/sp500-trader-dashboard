@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sp500-trader-dashboard/precache-manifest.2804ecbd701d94b838428a877b1dbec2.js"
+  "/sp500-trader-dashboard/precache-manifest.584e7191fac7dd2f629aa3ed078c2762.js"
 );
 
 self.addEventListener('message', (event) => {
