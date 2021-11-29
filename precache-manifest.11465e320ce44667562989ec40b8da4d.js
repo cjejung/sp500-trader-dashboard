@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1e032fe5f7ec991cbdc45aa3e17aea29",
+    "revision": "99d921a8484ce868d79216c84435ca2d",
     "url": "/sp500-trader-dashboard/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sp500-trader-dashboard/static/css/2.e710702a.chunk.css"
   },
   {
-    "revision": "cee5dc37bc2280bffb1a",
+    "revision": "09696e3017fe62887399",
     "url": "/sp500-trader-dashboard/static/css/main.ef741c36.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sp500-trader-dashboard/static/js/2.889dfff0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cee5dc37bc2280bffb1a",
-    "url": "/sp500-trader-dashboard/static/js/main.dae7b33f.chunk.js"
+    "revision": "09696e3017fe62887399",
+    "url": "/sp500-trader-dashboard/static/js/main.61060ec2.chunk.js"
   },
   {
     "revision": "2900a8259ddc98da4cac",
