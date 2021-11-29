@@ -150,27 +150,28 @@ export class Dashboard extends Component {
    responsive: true,
    maintainAspectRatio: false,
    scales: {
-      x: {
-          grid: {
+     xAxes: [{
+          gridLines: {
               display: false
           },
           ticks: {
-              color: 'rgba(148, 151, 193)'
+              fontColor: 'rgba(148, 151, 193)'
           }
-      },
-      y: {
-          grid: {
+      }],
+      yAxes: [{
+          gridLines: {
               display: false
           },
           ticks: {
               callback: function(value, index, values) {
                 return Math.round(value * 1000) / 10 + "%"
               },
-              color: 'rgba(148, 151, 193)'
+              fontColor: 'rgba(148, 151, 193)'
           },
-      }
+      }]
+       
     },
-    plugins: {
+    //plugins: {
         
         legend: {
           display: true,
@@ -182,20 +183,23 @@ export class Dashboard extends Component {
                 }
             }
         },
-        tooltip: {
+        tooltips: {
             callbacks: {
-                label: function(context) {
-                    var label = context.dataset.label || '';
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
                     if (label) { label += ': '; }
-                    if (context.parsed.y !== null) { label += Math.round(context.parsed.y * 10000)/100 + "%";}
+                    if (tooltipItem.yLabel !== null) { label += Math.round(tooltipItem.yLabel * 10000)/100 + "%";}
                     return label;    
                 }
             },
         },     
-    },
+    //},
     elements: {
       point: {
         radius: 0
+      },
+      line: {
+        tension: 0
       }
     },
   };
@@ -210,45 +214,45 @@ export class Dashboard extends Component {
       fill: false,
       borderColor: 'rgba(0, 0, 0, 0)',
       backgroundColor: indexColours,
-      barPercentage: 1.2
+      barPercentage: 1
     }]
   };
 
   indexChartOptions = {
    scales: {
-      x: {
-          grid: {
+      xAxes: [{
+          gridLines: {
               display: false
           },
           ticks: {
-              color: 'rgba(148, 151, 193)'
+              fontColor: 'rgba(148, 151, 193)'
           }
-      },
-      y: {
-          grid: {
+      }],
+      yAxes: [{
+          gridLines: {
               display: false
           },
           ticks: {
               callback: function(value, index, values) {
                 return Math.round((value + 1) * 1000)/10
               },
-              color: 'rgba(148, 151, 193)'
+              fontColor: 'rgba(148, 151, 193)'
           },
-      }
+      }]
     },
-    plugins: {
+    //plugins: {
         legend: {
           display: false
         },
-        tooltip: {
+        tooltips: {
             callbacks: {
-                label: function(context) {
-                    var label = Math.round((context.parsed.y + 1)*10000 )/100;
+                label: function(tooltipItem, data) {
+                    var label = Math.round((tooltipItem.yLabel + 1)*10000 )/100;
                     return label;    
                 }
             },
         },     
-    },
+    //},
     legend: {
       display: false,
     },
@@ -291,41 +295,44 @@ export class Dashboard extends Component {
 
   PerformanceChartOptions = {
     scales: {
-      y: {
+      yAxes:[ {
         display: true,
-        grid: {
+        gridLines: {
           display: false,
         },
         ticks: {
           display: false
         }
-      },
-      x: {
+      }],
+      xAxes: [{
         display: false,
-        grid: {
+        gridLines: {
           display: false,
         },
         ticks:  {
           stepSize: 10
         }
-      },
+      }],
     },
-    plugins: {
+    //plugins: {
         legend: { display: false},
-        tooltip: {
+        tooltips: {
             callbacks: {
-                label: function(context) {
-                    var label = context.dataset.label || '';
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
                     if (label) { label += ': '; }
-                    if (context.parsed.y !== null) { label += Math.round(context.parsed.y * 1000)/1000}
+                    if (tooltipItem.yLabel !== null) { label += Math.round(tooltipItem.yLabel * 1000)/1000}
                     return label;    
                 }
             },
         },     
-    },
+    //},
     elements: {
       point: {
         radius: 0
+      },
+      line: {
+        tension: 0
       }
     },
   };
@@ -354,9 +361,9 @@ export class Dashboard extends Component {
 
   feesChartOptions = {
     scales: {
-      y: {
+      yAxes: [{
         display: false,
-        grid: {
+        gridLines: {
           display: false,
         },
         ticks: {
@@ -364,10 +371,10 @@ export class Dashboard extends Component {
           beginAtZero: true,
           min: 0,          
         }
-      },
-      x: {
+      }],
+      xAxes: [{
         display: false,
-        grid: {
+        gridLines: {
           display: false,
         },
         ticks: {
@@ -376,13 +383,13 @@ export class Dashboard extends Component {
           fontColor: "#a7afb7",
           padding: 10,
         }
-      },
+      }],
     },
-    plugins: {
+    //plugins: {
         legend: {
             display: false
-        }
-    },
+        },
+    //},
     elements: {
       point: {
         radius: 0
@@ -404,32 +411,32 @@ export class Dashboard extends Component {
 
   tradesChartOptions = {
     scales: {
-      y: {
+      yAxes: [{
         display: false,
         ticks: {
           display: false,
           min: 0,
         },
-        grid: {
+        gridLines: {
           drawBorder: false,
           display: false
         }
-      },
-      x: {
+      }],
+      xAxes: [{
         display: false,
         
         ticks: {
           display: false,
           
         },
-        grid: {
+        gridLines: {
           drawBorder: false,
           display: false
         }
-      },
+      }],
       barThickness: 8,
     },
-    plugins: {
+    //plugins: {
         legend: {
           display: false
         },
@@ -438,7 +445,7 @@ export class Dashboard extends Component {
             radius: 0
           }
         }
-    }
+    //}
   };
   
   
@@ -533,13 +540,13 @@ export class Dashboard extends Component {
                         <div className="col-6 d-sm-flex align-items-center">
                           <div>
                             <label className="sp500_titles">Dollar</label>
-                            <h4><small>&#36;</small>{cashData.cash_usd.toLocaleString('en-UK',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h4>
+                            <h4><small>&#36;</small>{cashData.cash_usd.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</h4>
                           </div>
                         </div>{/* col */}
                         <div className="col-6 d-sm-flex align-items-center">
                           <div>
                             <label className="sp500_titles">Euro </label>
-                            <h4><small>&euro;</small>{cashData.cash_eur.toLocaleString('en-UK',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h4>
+                            <h4><small>&euro;</small>{cashData.cash_eur.toLocaleString('en-UK',{minimumFractionDigits: 0, maximumFractionDigits: 0})}</h4>
                           </div>
                         </div>{/* col */}
                       </div>{/* card-body */}
