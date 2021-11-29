@@ -253,9 +253,6 @@ export class Dashboard extends Component {
             },
         },     
     //},
-    legend: {
-      display: false,
-    },
     elements: {
       point: {
         radius: 0
